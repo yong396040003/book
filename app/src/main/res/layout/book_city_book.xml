@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/book_city_v"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/left_l_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="140dp"
+                android:layout_height="120dp">
+                <!--左侧图片-->
+                <ImageView
+                    android:id="@+id/book_city_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/eight" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/right_r_hot_book"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toRightOf="@+id/left_l_book"
+            android:orientation="vertical">
+            <!--书名-->
+            <TextView
+                android:id="@+id/book_city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="书名"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+            <!--类型 作者-->
+            <TextView
+                android:id="@+id/book_city_author_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="作者 | 类型"
+                android:textSize="13sp" />
+            <!--简介-->
+            <TextView
+                android:id="@+id/book_city_synopsis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="简介"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/book_city_h"
+        android:layout_width="140dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <!--左侧图片-->
+        <ImageView
+            android:id="@+id/book_city_h_img"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:src="@mipmap/seven" />
+
+        <TextView
+            android:id="@+id/book_city_h_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="书名"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

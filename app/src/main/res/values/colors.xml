@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--状态栏-->
+    <color name="colorPrimary">#12b7f5</color>
+    <!--导航栏-->
+    <color name="colorPrimaryDark">#12b7f5</color>
+    <color name="colorAccent">#EE2C2C</color>
+    <color name="colorEditText_true">#12b7f5</color>
+    <color name="colorEditText_false">#F0F0F0</color>
+
+    <color name="list_view_f">#F0F0F0</color>
+
+    <color name="font">#696969</color>
+    <color name="black">#000</color>
+</resources>

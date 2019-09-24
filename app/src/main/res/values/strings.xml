@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name" translatable="false">book</string>
+    <string name="bookshelf" translatable="false">&#xe622;</string>
+    <string name="bookCity" translatable="false">&#xe748;</string>
+    <string name="paiHang" translatable="false">&#xe613;</string>
+    <string name="classify" translatable="false">&#xe637;</string>
+    <string name="menu" translatable="false">&#xe69b;</string>
+    <string name="search" translatable="false">&#xe600;</string>
+    <string name="back" translatable="false">&#xe608;</string>
+    <string name="sort_d" translatable="false">&#xe602;</string>
+    <string name="sort_u" translatable="false">&#xe639;</string>
+    <string name="pro" translatable="false">&#xe605;</string>
+    <string name="setting" translatable="false">&#xe7e2;</string>
+    <string name="time" translatable="false">&#xe684;</string>
+    <string name="more" translatable="false">&#xe611;</string>
+    <string name="open" translatable="false">open</string>
+    <string name="close" translatable="false">close</string>
+
+    <string-array name="classifyCategoryList">
+        <item>玄幻魔法</item>
+        <item>武侠仙侠</item>
+        <item>都市言情</item>
+        <item>历史军事</item>
+        <item>网游竞技</item>
+        <item>科幻小说</item>
+        <item>恐怖灵异</item>
+        <item>女生小说</item>
+        <item>其他小说</item>
+    </string-array>
+
+    <string name="disclaimer" translatable="false">
+            \u3000\u30001.一本好书小说皆在为广大小说爱好者提供小说的搜索、链接服务，但软件本身不会对链接于第三方的搜索结果作任何形式的编辑、修改或存储，用户应当自行判断链接于第三方网站，上的内容的真实性、完整性、准确性，本软件对用户因此造成的损失不承担任何责任。\n
+			\u3000\u30002.为更好的提升在手机终端的阅读体验，一本好书小说同时提供阅读技术转码服务，用户可以自由选择使用或不使用此服务。\n
+			\u3000\u30003.通过一本好书小说获得的内容仅限用户个人学习、研究、欣赏，此外的任何使用行为(复制、转载等)用户均应自行获得相关权利人的许可，否则应承担全部法律责任。\n
+			\u3000\u30004.用户可以免费下载、安装、使用本软件，但未经许可不得对本软件进行任何形式的反向工程、反向编译、反向汇编;不得使用任何插件、外挂等非法工具接入本软件及系统;不得擅自复制、增加、删除本软件的数据。\n
+			\u3000\u3000如果您认为通过本软件提供的内容侵犯了您的相关权益，请及时通知我们(396040003@qq.com)并按照如下要求提供相应的材料:\n
+			\u3000\u30001.权利主体信息:包括但不限于权利人的姓名、公司名称、有效身份证明(身份证、护照、营业执照等)、联系方式、联系地址等。权利人委托代理人发出通知的，代理人必须出示权利人的委托书，且代理人发出的每个不同的通知均需获得权利人的分别授权;\n
+			\u3000\u30002.权利要求:即明确要求删除的内容的名称、网络地址、准确位置等。\n
+			\u3000\u30003.构成侵权的初步证明:包括但不限于作品登记证书、授权证明、许可/转让协议等。\n
+			\u3000\u30004.权利人保证:权利人应保证陈述和提交的资料是真实、合法、有效的，并保证承担因虚假陈述及不实造成的全部法律后果。\n
+			\u3000\u30005.签署:通知书应由权利人签字或盖章。
+    </string>
+
+</resources>

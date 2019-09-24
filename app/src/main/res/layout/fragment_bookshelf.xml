@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/top_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/main_top_nav" />
+
+    <RelativeLayout
+        android:id="@+id/bookshelf_null"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top_nav">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="你还没有任何书籍，去书城添加几本吧！"
+            android:textColor="@color/font" />
+
+        <Button
+            android:id="@+id/bookshelf_button"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/text1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorEditText_true"
+            android:text="去书城"
+            android:textColor="#fff" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/bookshelf_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top_nav"></android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorEditText_true"
+        android:layout_below="@id/top_nav"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <!--批量操作-->
+    <RelativeLayout
+        android:id="@+id/batch_done"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:text="取消"
+            android:textColor="@color/font"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:layout_toLeftOf="@+id/cancel"
+            android:text="移除书架"
+            android:textColor="@color/font"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/batch_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:layout_toLeftOf="@+id/delete"
+            android:text="全选"
+            android:textColor="@color/font"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</RelativeLayout>

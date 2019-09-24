@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/navigation_background">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--顶部标题栏-->
+            <RelativeLayout
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="44dp">
+
+                <book.yong.cn.book.jutil.FontTextView
+                    android:id="@+id/classify_left_text"
+                    style="@style/public_"
+                    android:textSize="18sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/back" />
+
+                <TextView
+                    android:id="@+id/classify_middle_text"
+                    style="@style/public_"
+                    android:text="哈哈哈哈哈" />
+
+                <book.yong.cn.book.jutil.FontTextView
+                    android:id="@+id/classify_right_text"
+                    style="@style/public_"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/search" />
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="fixed"
+        app:tabBackground="@color/colorEditText_false"
+        app:tabSelectedTextColor="@color/colorEditText_true"
+        app:tabIndicatorColor="@color/colorEditText_true"
+        app:tabTextColor="@color/font"></android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.v4.view.ViewPager>
+</LinearLayout>

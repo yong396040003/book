@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="bookshelf_left" type="id"></item>
+    <item name="bookCity_left" type="id"></item>
+    <item name="paiHang_left" type="id"></item>
+    <item name="classify_left" type="id"></item>
+    <item name="bookshelf_right" type="id"></item>
+    <item name="bookCity_right" type="id"></item>
+    <item name="paiHang_right" type="id"></item>
+    <item name="classify_right" type="id"></item>
+</resources>

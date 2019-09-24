@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/left_l"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="110dp"
+            android:layout_height="90dp">
+            <!--左侧图片-->
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_toRightOf="@+id/right_r"
+        android:layout_alignTop="@id/left_l"
+        android:layout_marginStart="-50dp"
+        android:background="@drawable/round"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:text="1" />
+
+
+    <LinearLayout
+        android:id="@+id/right_r"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toRightOf="@+id/left_l"
+        android:orientation="vertical">
+        <!--书名-->
+        <TextView
+            android:id="@+id/book_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="书名"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+        <!--类型 作者-->
+        <TextView
+            android:id="@+id/category_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="作者 | 类型"
+            android:textSize="13sp" />
+        <!--简介-->
+        <TextView
+            android:id="@+id/synopsis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="简介"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</RelativeLayout>
