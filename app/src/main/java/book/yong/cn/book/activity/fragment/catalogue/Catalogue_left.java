@@ -15,7 +15,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,6 +27,7 @@ import java.util.Map;
 
 import book.yong.cn.book.R;
 import book.yong.cn.book.activity.BookPageActivity;
+import book.yong.cn.book.activity.BookPageActivity1;
 import book.yong.cn.book.jutil.Http;
 import book.yong.cn.book.jutil.StaticConstant;
 import book.yong.cn.book.pojo.Catalogue_bean;
@@ -155,7 +155,8 @@ public class Catalogue_left extends Fragment implements AdapterView.OnItemClickL
         Catalogue_bean catalogueBean = catalogue_beans.get(position);
         String bookNumber = String.valueOf(catalogueBean.getNumber());
         Intent intent = new Intent(getActivity(), BookPageActivity.class);
-        intent.putExtra("page", position);
+        intent.putExtra("page", 0);
+        intent.putExtra("count", catalogueBean.getCount());
         intent.putExtra("catalogueList", bookNumber);
         intent.putExtra("bookName", bookName);
         startActivity(intent);

@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.Toast;
 
-import book.yong.cn.book.jutil.StaticConstant;
 
 public class BookViewPager extends ViewPager {
     private int downX;
@@ -50,10 +49,10 @@ public class BookViewPager extends ViewPager {
                     myOnTouchLister.hide();
                     m = true;
                 }
-                if (count <= 1 && ev.getX() > downX && nowPage == 0) {
+                if (count == 1 && ev.getX() > downX && nowPage == 0) {
                     Toast.makeText(getContext(), "当前已是第一页", Toast.LENGTH_SHORT).show();
-                } else if (count == StaticConstant.ZJCOUNT) {
-                    Toast.makeText(getContext(), "你正在左翻", Toast.LENGTH_SHORT).show();
+                } else if (count > 1 && ev.getX() > downX && nowPage == 0) {
+
                 }
                 break;
             default:
@@ -76,6 +75,8 @@ public class BookViewPager extends ViewPager {
     }
 
     public interface MyOnTouchLister {
+        void update();
+
         void show();
 
         void hide();

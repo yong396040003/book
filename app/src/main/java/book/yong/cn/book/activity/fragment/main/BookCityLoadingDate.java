@@ -66,6 +66,7 @@ public class BookCityLoadingDate {
             Message message = new Message();
             try {
                 String jsonString = Http.sendPost(URL, parameter);
+                Log.e("success", jsonString);
                 if (jsonString != null) {
                     JSONObject jsonObject = new JSONObject(jsonString);
                     JSONArray newBook = jsonObject.getJSONArray("newBook");

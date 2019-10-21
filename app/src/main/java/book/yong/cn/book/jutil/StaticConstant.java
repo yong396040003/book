@@ -27,6 +27,6 @@ public class StaticConstant {
     //书城
     public final static String URL_BOOK_CITY = "http://47.105.125.214/getBookCityBook.do";
     //章节数量
-    public static int ZJCOUNT = 0;
+    public static int ZJCOUNT = 10;
 
 }

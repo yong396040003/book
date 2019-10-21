@@ -29,6 +29,7 @@ import java.util.List;
 import java.util.Objects;
 
 import book.yong.cn.book.R;
+import book.yong.cn.book.activity.BookPageActivity1;
 import book.yong.cn.book.activity.SearchActivity;
 import book.yong.cn.book.adapter.BookshelfGridAdapter;
 import book.yong.cn.book.jutil.FontTextView;
@@ -37,6 +38,7 @@ import book.yong.cn.book.myInterface.GoBookCityListener;
 import book.yong.cn.book.myInterface.OpenDrawerLayoutListener;
 import book.yong.cn.book.myInterface.RecyclerViewOnItemClickListener;
 import book.yong.cn.book.pojo.Bookshelf;
+import book.yong.cn.book.pojo.Catalogue_bean;
 import book.yong.cn.book.sqlite.Bookshelf_database;
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -189,7 +191,14 @@ public class Bookshelf_home extends Fragment implements View.OnClickListener {
                         isSelect = false;
                         batchSelect.setText("全选");
                     } else {
-                        Toast.makeText(getContext(), bookshelfList.get(position).toString() + "  " + position, Toast.LENGTH_SHORT).show();
+                        String bookNumber = String.valueOf(bookshelfList.get(position).getNumber());
+                        Intent intent = new Intent(getActivity(), BookPageActivity1.class);
+                        intent.putExtra("page", 0);
+                        intent.putExtra("count", bookshelfList.get(position).getCount());
+                        intent.putExtra("catalogueList", bookNumber);
+                        intent.putExtra("bookName", bookshelfList.get(position).getName());
+                        startActivity(intent);
+                        getActivity().finish();
                     }
                 }
 
