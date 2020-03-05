@@ -259,9 +259,6 @@ public class SearchActivity extends BaseActivity implements AdapterView.OnItemCl
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent();
-        intent.setClass(this, MainActivity.class);
-        startActivity(intent);
         finish();
     }
 

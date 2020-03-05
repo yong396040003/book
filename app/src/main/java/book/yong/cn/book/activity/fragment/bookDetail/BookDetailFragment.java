@@ -212,10 +212,8 @@ public class BookDetailFragment extends Fragment implements View.OnClickListener
                             JSONObject jsonObject1 = new JSONObject(jsonObject.get("data").toString());
                             String zj = jsonObject1.get("name").toString();
                             StaticConstant.ZJCOUNT = jsonObject1.getInt("count");
-                            if (zj != null) {
-                                update_zj.setText(zj);
-                                values.put("catalogue", zj);
-                            }
+                            update_zj.setText(zj);
+                            values.put("catalogue", zj);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

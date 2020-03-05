@@ -102,7 +102,7 @@ public class Http {
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "utf-8");
                 //5.水桶盛水 BufferedReader(缓冲字符流)
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                StringBuffer stringBuffer = new StringBuffer();
+                StringBuilder stringBuffer = new StringBuilder();
                 String str = null;
 
                 while ((str = bufferedReader.readLine()) != null) {

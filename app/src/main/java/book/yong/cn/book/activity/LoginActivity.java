@@ -28,6 +28,7 @@ import book.yong.cn.book.R;
 import book.yong.cn.book.jutil.Http;
 import book.yong.cn.book.jutil.MD5;
 import book.yong.cn.book.jutil.LoginDialogFalse;
+import book.yong.cn.book.jutil.StaticConstant;
 import book.yong.cn.book.sqlite.Login_database;
 
 /**
@@ -85,14 +86,37 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     database.insert("manager", null, managers);
                     database.close();
                     //SP保存，用于自动登陆
-                    SharedPreferences sp = getSharedPreferences("isLogin",MODE_PRIVATE);
+                    SharedPreferences sp = getSharedPreferences("isLogin", MODE_PRIVATE);
                     SharedPreferences.Editor editor = sp.edit();
-                    editor.putString("name",usernameText).commit();
+                    editor.putString("name", usernameText).apply();
                     finish();
                     startActivity(intent);
                 } else {
                     LoginDialogFalse dialogFalse = new LoginDialogFalse(LoginActivity.this);
                     dialogFalse.show();
+                }
+
+                if (msg.what == 2 && msg.obj != null) {
+                    JSONObject jsonObject = null;
+                    try {
+                        jsonObject = new JSONObject((String) msg.obj);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        assert jsonObject != null;
+                        if (jsonObject.getInt("code") == 0) {
+                            Toast.makeText(LoginActivity.this, "网络异常", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            finish();
+                            startActivity(intent);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Toast.makeText(LoginActivity.this, "网络异常", Toast.LENGTH_SHORT).show();
                 }
             }
         };
@@ -103,7 +127,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (v == forget) {
             Toast.makeText(LoginActivity.this, "对不起，暂未开放（forget）", Toast.LENGTH_SHORT).show();
         } else if (v == register) {
-            Toast.makeText(LoginActivity.this, "对不起，暂未开放（register）", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent();
+            intent.setClass(this, RegisterActivity.class);
+            startActivity(intent);
         } else if (v == login) {
             //正则判断一下输入是否合法
             usernameText = username.getText().toString();
@@ -116,7 +142,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     boolean isNumber = Pattern.matches(pattern, usernameText);
                     if (isNumber) {
                         //向服务器发送数据进行验证(坑点：android4.0以后访问网络不能在主线程)
-                        Toast.makeText(LoginActivity.this, "对不起，暂未开放普通用户登陆", Toast.LENGTH_SHORT).show();
+                        Thread thread = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                String msg = Http.sendPost(StaticConstant.URL_USER_PHONE_LOGIN,
+                                        "userEmail=" + usernameText
+                                                + "&userPassword=" + passwordText);
+                                Message message = new Message();
+                                message.what = 2;
+                                message.obj = msg;
+                                mHandler.sendMessage(message);
+                            }
+                        });
+                        thread.start();
                     } else {
                         Toast.makeText(this, "账号格式错误（仅为数字）", Toast.LENGTH_SHORT).show();
                     }
@@ -136,9 +174,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         cursor.close();
                         database.close();
                         //SP保存，用于自动登陆
-                        SharedPreferences sp = getSharedPreferences("isLogin",MODE_PRIVATE);
+                        SharedPreferences sp = getSharedPreferences("isLogin", MODE_PRIVATE);
                         SharedPreferences.Editor editor = sp.edit();
-                        editor.putString("name",usernameText).commit();
+                        editor.putString("name", usernameText).apply();
                         Intent intent = new Intent(this, MainActivity.class);
                         finish();
                         startActivity(intent);
@@ -149,7 +187,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         new Thread() {
                             @Override
                             public void run() {
-                                String url = "http://47.105.125.214/loginPhone.do";
+                                String url = "http://49.233.93.71/loginPhone.do";
                                 String parameter = "?username=" + usernameText + "&password=" + passwordText;
                                 String jsonString = Http.sendGet(url + parameter);
                                 try {

@@ -192,8 +192,6 @@ public class BookPageActivity extends AppCompatActivity implements BookPageAdapt
                                     i++;
                                 }
                             }
-                            Log.e("success", bookPageList.toString());
-                            Log.e("success", leftbookPageList.toString());
                             //如果最后一页不为null 那么就让他变为null
                             if (bookPageList.get(bookPageList.size() - 1) != null && !isLeft) {
                                 bookPageList.add(bookPageList.size(), null);
@@ -348,6 +346,26 @@ public class BookPageActivity extends AppCompatActivity implements BookPageAdapt
         bookName = bundle.getString("bookName");
         //当前章节
         count = bundle.getInt("count");
+
+        //获取章节
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (!isStop) {
+                    if (bookNumber != null) {
+                        String jsonString = Http.sendPost(StaticConstant.URL_BOOK_LastDETAIL, "number=" + bookNumber);
+                        JSONObject jsonObject = null;
+                        try {
+                            jsonObject = new JSONObject(jsonString);
+                            JSONObject jsonObject1 = new JSONObject(jsonObject.get("data").toString());
+                            StaticConstant.ZJCOUNT = jsonObject1.getInt("count");
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        }).start();
 
         //获取目录数据
         MyThread catalogueList = new MyThread();

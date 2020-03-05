@@ -39,4 +39,5 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.16'
     implementation 'com.jakewharton:butterknife:7.0.0'
     implementation project(path: ':PullToRefresh_library')
+    implementation 'com.alibaba:fastjson:1.2.60'
 }

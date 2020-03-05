@@ -40,7 +40,7 @@
         android:id="@+id/bookshelf_grid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/top_nav"></android.support.v7.widget.RecyclerView>
+        android:layout_below="@+id/top_nav" />
 
     <TextView
         android:id="@+id/msg"

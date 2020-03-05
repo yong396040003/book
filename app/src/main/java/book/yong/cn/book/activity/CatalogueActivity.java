@@ -3,6 +3,7 @@ package book.yong.cn.book.activity;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -19,6 +20,8 @@ import book.yong.cn.book.R;
 import book.yong.cn.book.activity.fragment.catalogue.Catalogue_left;
 import book.yong.cn.book.activity.fragment.catalogue.Catalogue_right;
 import book.yong.cn.book.jutil.FontTextView;
+import book.yong.cn.book.jutil.Http;
+import book.yong.cn.book.jutil.StaticConstant;
 
 /**
  *

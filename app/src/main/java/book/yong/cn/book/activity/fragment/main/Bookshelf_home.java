@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Objects;
 
 import book.yong.cn.book.R;
-import book.yong.cn.book.activity.BookPageActivity1;
+import book.yong.cn.book.activity.BookPageActivity;
 import book.yong.cn.book.activity.SearchActivity;
 import book.yong.cn.book.adapter.BookshelfGridAdapter;
 import book.yong.cn.book.jutil.FontTextView;
@@ -192,13 +192,12 @@ public class Bookshelf_home extends Fragment implements View.OnClickListener {
                         batchSelect.setText("全选");
                     } else {
                         String bookNumber = String.valueOf(bookshelfList.get(position).getNumber());
-                        Intent intent = new Intent(getActivity(), BookPageActivity1.class);
+                        Intent intent = new Intent(getActivity(), BookPageActivity.class);
                         intent.putExtra("page", 0);
                         intent.putExtra("count", bookshelfList.get(position).getCount());
                         intent.putExtra("catalogueList", bookNumber);
                         intent.putExtra("bookName", bookshelfList.get(position).getName());
                         startActivity(intent);
-                        getActivity().finish();
                     }
                 }
 
